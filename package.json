@@ -1,5 +1,5 @@
 {
-  "name": "@anthropic/shopify-mcp-server",
+  "name": "@morsimohsen/shopify-mcp-server",
   "version": "1.0.0",
   "description": "MCP Server for Shopify - Enables AI assistants to interact with Shopify stores via GraphQL",
   "main": "dist/index.js",
@@ -23,7 +23,7 @@
     }
   },
   "scripts": {
-    "build": "tsc",
+    "build": "node --max-old-space-size=4096 node_modules/typescript/bin/tsc",
     "start": "node dist/index.js",
     "dev": "tsx src/index.ts",
     "watch": "tsc --watch",

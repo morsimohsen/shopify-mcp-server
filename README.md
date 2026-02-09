@@ -73,7 +73,7 @@ A comprehensive Model Context Protocol (MCP) server for Shopify, providing 36 to
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/shopify-mcp-server.git
+git clone https://github.com/morsimohsen/shopify-mcp-server.git
 cd shopify-mcp-server
 
 # Install dependencies
@@ -138,7 +138,20 @@ Add to your `claude_desktop_config.json`:
   }
 }
 ```
-
+```json
+{
+  "mcpServers": {
+    "shopify": {
+      "command": "npx",
+          "args": ["@morsimohsen/shopify-mcp-server"],
+          "env": {
+            "SHOPIFY_STORE_URL": "your-store.myshopify.com",
+            "SHOPIFY_ACCESS_TOKEN": "shpat_xxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+          }
+    }
+  }
+}
+```
 ### With VS Code Copilot
 
 Add to your VS Code settings or `.vscode/mcp.json`:
