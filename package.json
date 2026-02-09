@@ -1,31 +1,64 @@
 {
-  "name": "shopify-mcp-server",
+  "name": "@anthropic/shopify-mcp-server",
   "version": "1.0.0",
-  "description": "MCP Server for Shopify - Enables AI assistants to interact with Shopify stores",
+  "description": "MCP Server for Shopify - Enables AI assistants to interact with Shopify stores via GraphQL",
   "main": "dist/index.js",
   "type": "module",
+  "bin": {
+    "shopify-mcp-server": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./tools": {
+      "import": "./dist/tools/index.js",
+      "types": "./dist/tools/index.d.ts"
+    }
+  },
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
     "dev": "tsx src/index.ts",
     "watch": "tsc --watch",
     "lint": "eslint src --ext .ts",
-    "clean": "rimraf dist"
+    "clean": "rimraf dist",
+    "prepublishOnly": "npm run clean && npm run build"
   },
   "keywords": [
     "mcp",
     "shopify",
     "ai",
     "model-context-protocol",
-    "e-commerce"
+    "e-commerce",
+    "graphql",
+    "claude",
+    "llm",
+    "chatgpt",
+    "ai-tools",
+    "shopify-api"
   ],
-  "author": "",
+  "author": "Morsi Mohsen <morsim33@gmail.com>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/morsimohsen/shopify-mcp-server.git"
+  },
+  "bugs": {
+    "url": "https://github.com/morsimohsen/shopify-mcp-server/issues"
+  },
+  "homepage": "https://github.com/morsimohsen/shopify-mcp-server#readme",
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.0.0",
+    "@modelcontextprotocol/sdk": "^1.26.0",
     "graphql": "^16.9.0",
     "graphql-request": "^7.0.0",
-    "zod": "^3.23.0"
+    "zod": "^3.25.0"
   },
   "devDependencies": {
     "@types/node": "^20.14.0",

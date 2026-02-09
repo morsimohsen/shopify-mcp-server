@@ -1,0 +1,36 @@
+# Source files (we publish compiled dist/)
+src/
+
+# Config files
+tsconfig.json
+.eslintrc*
+.prettierrc*
+.editorconfig
+
+# Dev files
+.env*
+.env.example
+*.log
+
+# Git
+.git/
+.gitignore
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Test files
+__tests__/
+*.test.ts
+*.spec.ts
+coverage/
+
+# Build artifacts (except dist)
+node_modules/
+
+# Misc
+*.md
+!README.md
